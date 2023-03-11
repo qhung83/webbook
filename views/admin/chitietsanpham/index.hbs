@@ -1,0 +1,54 @@
+<p style="color: gray;font-size: 20px;">Danh Sách Chi Tiết Sản Phẩm</p>
+<a class="btn btn-large btn-block btn-outline-success" href="/admin/chitietsanpham/add" role="button" style="width: 25%;float: right;">
+	Thêm chi tiết sản phẩm mới
+</a>
+<br>
+<br>
+<table class="table" style="color: gray;">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Mã sản phẩm</th>
+			<th scope="col">Đường kính mặt</th>
+			<th scope="col">Chống nước</th>
+			<th scope="col">Chất liệu mặt</th>
+			<th scope="col">Năng lượng sử dụng</th>
+			<th scope="col">Size dây</th>
+			<th scope="col">Chất liệu dây</th>
+			<th scope="col">Chất liệu vỏ</th>
+			<th scope="col">Kiểu dáng</th>
+			<th scope="col">Xuất xứ</th>
+			<th scope="col">Chế độ bảo hành</th>
+			<th scope="col" >Thao tác</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+		{{#each details}}
+
+		<tr>
+			<td >{{DetailID}}</td>
+			<td>{{ProID}}</td>
+			<td>{{Duongkinhmat}}</td>
+			<td >{{Chongnuoc}}</td>
+			<td>{{Chatlieumat}}</td>
+			<td>{{Nangluongsudung}}</td>
+			<td >{{Sizeday}}</td>
+			<td>{{Chatlieuday}}</td>
+			<td>{{Chatlieuvo}}</td>
+			<td >{{Kieudang}}</td>
+			<td>{{Xuatxu}}</td>
+			<td>{{Chedobaohanh}}</td>
+		
+			<td class="text-right">
+				<a class="btn btn-danger" href="/admin/chitietsanpham/delete?id={{DetailID}}" role="button" style="background-color: #F4F7FA;border:0px solid #F4F7FA">
+					<i class="fa fa-trash" aria-hidden="true" style="color: gray;font-size:20px;"></i>
+				</a>
+				<a class="btn btn-primary" href="/admin/chitietsanpham/edit?id={{DetailID}}" role="button" style="background-color: #F4F7FA;border:0px solid #F4F7FA">
+					<i class="fa fa-pencil" aria-hidden="true" style="color: gray;font-size:20px;"></i>
+				</a>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

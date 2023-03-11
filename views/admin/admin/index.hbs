@@ -1,0 +1,40 @@
+<p style="color: gray;font-size: 20px;">Danh Sách Admin</p>
+<a class="btn btn-large btn-block btn-outline-success" href="/admin/admin/add" role="button" style="width: 25%;float: right;">
+	Thêm Tài Khoản Admin Mới
+</a>
+<br>
+<br>
+<table class="table" style="color: gray;">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Tên Tài Khoản</th>
+			<th scope="col">Tên Admin</th>
+			<th scope="col">Email</th>
+			<th scope="col">Ngày tháng năm sinh</th>
+			<th scope="col">Quyền</th>
+			<th scope="col" style="padding-left: 3%;" >Thao Tác</th>
+			
+		</tr>
+	</thead>
+	<tbody>
+		{{#each users}}
+		<tr>
+			<td scope="row">{{f_ID}}</td>
+			<td>{{f_Username}}</td>
+			<td scope="row">{{f_Name}}</td>
+			<td>{{f_Email}}</td>
+			<td scope="row">{{f_DOB}}</td>
+			<td scope="row">{{f_Permission}}</td>
+			<td class="text-right">
+				<a class="btn btn-danger" href="/admin/admin/delete?id={{f_ID}}" role="button" style="background-color: #F4F7FA;border:0px solid #F4F7FA">
+					<i class="fa fa-trash" aria-hidden="true" style="color: gray;font-size:20px;"></i>
+				</a>
+				<a class="btn btn-primary" href="/admin/admin/edit?id={{f_ID}}" role="button" style="background-color: #F4F7FA;border:0px solid #F4F7FA">
+					<i class="fa fa-pencil" aria-hidden="true" style="color: gray;font-size: 20px;"></i>
+				</a>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

@@ -1,0 +1,45 @@
+
+<table class="table" style="color: gray;">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Tên khách hàng</th>
+			<th scope="col">Địa chỉ</th>
+			<th scope="col">Số điện thoại</th>
+			<th scope="col">Tổng tiền</th>
+			<th scope="col">Ngày đặt</th>
+			
+			<th scope="col">Trạng thái hóa đơn</th>
+			<th scope="col">Thao tác &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+		{{#each orders}}
+				
+		<tr>
+			<th scope="row">{{OrderID}}</th>
+			<td>{{Tenkhachhang}}</td>
+			<td>{{Address}}</td>
+			<td>{{Phone}}</td>
+			<td>{{number_format Total}}VNĐ</td>
+			<td>{{OrderDate}}</td>
+			
+			<td>{{Trangthai}}</td>
+		
+			<td class="text-right">
+				<a class="btn btn-danger" href="/admin/hoadon/delete?id={{OrderID}}" role="button" style="background-color: #F4F7FA;border:0px solid #F4F7FA">
+					<i class="fa fa-trash" aria-hidden="true" style="color: gray;font-size:20px;"></i>
+				</a>
+				<a class="btn btn-primary" href="/admin/hoadon/edit?id={{OrderID}}" role="button" style="background-color: #F4F7FA;border:0px solid #F4F7FA">
+					<i class="fa fa-pencil" aria-hidden="true" style="color: gray;font-size:20px;"></i>
+				</a>
+
+				<a class="btn btn-primary" href="/admin/hoadon/chitiethoadon?id={{OrderID}}" role="button" style="background-color: #F4F7FA;border:0px solid #F4F7FA">
+					<i class="fa fa-info-circle" aria-hidden="true" style="color: gray;font-size:20px;"></i>
+				</a>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

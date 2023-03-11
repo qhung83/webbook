@@ -1,0 +1,30 @@
+
+<h3 style="color: gray;">Chi tiết hóa đơn</h3>
+ <table class="table" style="color: gray;">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Tên Sản Phẩm</th>
+			<th scope="col">Số Lượng</th>
+			<th scope="col">Giá Mua</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+		{{#each orderdetails}}
+				
+		<tr>
+			<th scope="row">{{ID}}</th>
+			<td>{{TenSanPham}}</td>
+			<td>{{Quantity}}</td>
+			<td>{{number_format Price}}VNĐ</td>
+		
+			
+		</tr>
+		{{/each}}
+	</tbody>
+</table> 
+
+
+
+ 

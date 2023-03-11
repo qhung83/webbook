@@ -1,0 +1,40 @@
+<h3 style="color: gray;">Danh sách đơn hàng đã đặt</h3>
+<table class="table" style="color: gray;" style="width: 100%;font-size: 8px;">
+	<thead style="font-size: 15px;">
+		<tr>
+			<th scope="col">Mã Hóa Đơn</th>
+			<th scope="col">Tên khách hàng</th>
+			<th scope="col">Địa chỉ</th>
+			<th scope="col">Số điện thoại</th>
+			<th scope="col">Tổng tiền</th>
+			<th scope="col">Ngày đặt</th>
+			
+		
+			<th scope="col">Xem thông tin chi tiết đơn hàng </th>
+		</tr>
+	</thead>
+	<tbody>
+	
+		{{#each orders}}
+				
+		<tr style="font-size: 14px;">
+			<th scope="row">{{OrderID}}</th>
+			<td>{{Tenkhachhang}}</td>
+			<td>{{Address}}</td>
+			<td>{{Phone}}</td>
+			<td>{{number_format Total}}VNĐ</td>
+			<td>{{OrderDate}}</td>
+			
+		
+		
+			<td class="text-right">
+				
+
+				<a class="btn btn-primary" href="/account/chitiethoadon?id={{OrderID}}" role="button" style="background-color: #F4F7FA;border:0px solid #F4F7FA">
+					<i class="fa fa-info-circle" aria-hidden="true" style="color: gray;font-size:20px;"></i>
+				</a>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

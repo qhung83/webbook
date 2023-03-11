@@ -1,0 +1,36 @@
+{{#section 'css'}}
+	<link rel="stylesheet" href="/css/login.css">
+	
+{{/section}}
+
+{{#if showError}}
+<div class="alert alert-danger">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<strong>Title!</strong> {{errorMsg}}
+</div>
+{{/if}}
+
+{{#section 'js'}}
+
+	<script type="text/javascript">
+	function kiemTraDangNhap(){
+		if(frmDangNhap.username.value==""){
+			alert('Mời bạn nhập tên đăng nhập');
+			return false;
+		}
+		if(frmDangNhap.rawPWD.value==""){
+			alert('Mời bạn nhập password');
+			return false;
+		}
+		return true;
+	}
+	</script>
+
+{{/section}}
+
+	<div class="jumbotron" style="width: 100%;background-color: whitesmoke;">
+			<p style="text-align: center;">Cảm ơn bạn đã mua hàng chúng tôi sẽ liên hệ lại với bạn trong thời gian sớm nhất. <a href="history">Xem thông tin đơn hàng đã đặt</a></p> 
+			<!-- hiển thị mọi tin nhắn được trả lại từ việc đăng nhập -->
+	        
+		
+		</div>

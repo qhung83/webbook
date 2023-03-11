@@ -1,0 +1,62 @@
+{{#if showAlert}}
+<div class="alert alert-success">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	Thêm thành công
+</div>
+{{/if}}
+
+<form action="" method="POST" role="form" style="color: gray;">
+	<div class="form-group">
+		<label >Mã sản phẩm</label>
+		<input type="text" class="form-control" id="" name="ProID" placeholder="Mã sản phẩm">
+	</div>
+	<div class="form-group">
+		<label for="">Đường kính mặt</label>
+		<input type="text" class="form-control" id="Duongkinhmat" name="Duongkinhmat" placeholder="Đường kính mặt">
+	</div>
+	<div class="form-group">
+		<label for="">Chống nước</label>
+		<input type="text" class="form-control" id="Chongnuoc" name="Chongnuoc" placeholder="Chống nước">
+	</div>
+	<div class="form-group">
+		<label for="">Chất liệu mặt</label>
+		<input type="text" class="form-control" id="Chatlieumat" name="Chatlieumat" placeholder="Chất liệu mặt">
+	</div>
+	<div class="form-group">
+		<label for="">Năng lượng sử dụng</label>
+		<input type="text" class="form-control" id="Nangluongsudung" name="Nangluongsudung" placeholder="Năng lượng sử dụng">
+	</div>
+	<div class="form-group">
+		<label for="">Size dây</label>
+		<input type="text" class="form-control" id="Sizeday" name="Sizeday" placeholder="Size dây">
+	</div>
+	<div class="form-group">
+		<label for="">Chất liệu dây</label>
+		<input type="text" class="form-control" id="Chatlieuday" name="Chatlieuday" placeholder="Chất liệu dây">
+	</div>
+	<div class="form-group">
+		<label for="">Chất liệu vỏ</label>
+		<input type="text" class="form-control" id="Chatlieuvo" name="Chatlieuvo" placeholder="Chất liệu vỏ">
+	</div>
+	<div class="form-group">
+		<label for="">Kiểu dáng</label>
+		<input type="text" class="form-control" id="Kieudang" name="Kieudang" placeholder="Kiểu dáng">
+	</div>
+	<div class="form-group">
+		<label for="">Xuất xứ</label>
+		<input type="text" class="form-control" id="Xuatxu" name="Xuatxu" placeholder="Xuất xứ">
+	</div>
+	<div class="form-group">
+		<label for="">Chế độ bảo hành</label>
+		<input type="text" class="form-control" id="Chedobaohanh" name="Chedobaohanh" placeholder="Chế độ bảo hành">
+	</div>
+	
+	<a class="btn btn-outline-secondary" href="/admin/chitietsanpham" role="button">
+		<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		Danh sách chi tiết sản phẩm
+	</a>
+	<button type="submit" class="btn btn-success">
+		<i class="fa fa-check" aria-hidden="true"></i>
+		Thêm
+	</button>
+</form>

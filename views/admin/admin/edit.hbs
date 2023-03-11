@@ -1,0 +1,41 @@
+{{#with Admin}}
+<form action="" method="POST" role="form">
+	<div class="form-group">
+		<label for="id">#</label>
+		<input type="text" class="form-control" id="id" name="f_ID" value="{{f_ID}}" readonly="true">
+	</div>
+	<div class="form-group">
+		<label style="color: gray;">Tài khoản</label>
+		<input type="text" class="form-control" id="f_Username" name="f_Username" value="{{f_Username}}">
+	</div>
+	<div class="form-group">
+		<label style="color: gray;">Mật khẩu</label>
+		<input type="password" class="form-control" id="f_Password" name="f_Password" value="{{f_Password}}">
+	</div>
+	<div class="form-group">
+		<label style="color: gray;">Họ và tên chủ tài khoản</label>
+		<input type="text" class="form-control" id="f_Name" name="f_Name" value="{{f_Name}}">
+	</div>
+	<div class="form-group">
+		<label for="">Email</label>
+		<input type="text" class="form-control" id="f_Email" name="f_Email" value="{{f_Email}}">
+	</div>
+	<div class="form-group">
+		<label for="">Ngày tháng năm sinh</label>
+		<input type="text" class="form-control" id="f_DOB" name="f_DOB" value="{{f_DOB}}">
+	</div>
+	<div class="form-group">
+		<label for="">Quyền</label>
+		<input type="text" class="form-control" id="f_Permission" name="f_Permission" value="{{f_Permission}}">
+	</div>
+
+	<a class="btn btn-outline-secondary" href="/admin/admin" role="button">
+		<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		Danh sách admin
+	</a>
+	<button type="submit" class="btn btn-outline-success">
+		<i class="fa fa-check" aria-hidden="true"></i>
+		Sửa
+	</button>
+</form>
+{{/with}}

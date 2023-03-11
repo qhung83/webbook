@@ -1,0 +1,36 @@
+<p style="color: gray;font-size: 20px;">Danh Sách Sản Phẩm</p>
+<a class="btn btn-large btn-block btn-outline-success" href="/admin/sanpham/add" role="button" style="width: 25%;float: right;">
+	Thêm sản phẩm mới
+</a>
+<br>
+<br>
+<table class="table" style="color: gray;">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Tên sản phẩm</th>
+			<th scope="col">Giá</th>
+			<th scope="col" style="padding-left: 8%;">Thao tác</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+		{{#each products}}
+
+		<tr>
+			<th scope="row">{{ProID}}</th>
+			<td>{{ProName}}</td>
+			<td>{{number_format Price}}VNĐ</td>
+		
+			<td class="text-right">
+				<a class="btn btn-danger" href="/admin/sanpham/delete?id={{ProID}}" role="button" style="background-color: #F4F7FA;border:0px solid #F4F7FA">
+					<i class="fa fa-trash" aria-hidden="true" style="color: gray;font-size:20px;"></i>
+				</a>
+				<a class="btn btn-primary" href="/admin/sanpham/edit?id={{ProID}}" role="button" style="background-color: #F4F7FA;border:0px solid #F4F7FA">
+					<i class="fa fa-pencil" aria-hidden="true" style="color: gray;font-size:20px;"></i>
+				</a>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

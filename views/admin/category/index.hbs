@@ -1,0 +1,31 @@
+<p style="color: gray;font-size: 20px;">Danh Sách Loại Sản Phẩm</p>
+<a class="btn btn-large btn-block btn-outline-success" href="/admin/category/add" role="button" style="width: 25%;float: right;">
+	Thêm Loại Sản Phẩm
+</a>
+<br>
+<br>
+<table class="table" style="color: gray;">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Tên loại sản phẩm</th>
+			<th scope="col" style="padding-left: 26%;">&nbsp;Thao Tác</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each categories}}
+		<tr>
+			<td scope="row">{{CatID}}</td>
+			<td>{{CatName}}</td>
+			<td class="text-right">
+				<a class="btn btn-danger" href="/admin/category/delete?id={{CatID}}" role="button" style="background-color: #F4F7FA;border:0px solid #F4F7FA">
+					<i class="fa fa-trash" aria-hidden="true" style="color: gray;font-size:20px;"></i>
+				</a>
+				<a class="btn btn-primary" href="/admin/category/edit?id={{CatID}}" role="button" style="background-color: #F4F7FA;border:0px solid #F4F7FA">
+					<i class="fa fa-pencil" aria-hidden="true" style="color: gray;font-size:20px;"></i>
+				</a>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

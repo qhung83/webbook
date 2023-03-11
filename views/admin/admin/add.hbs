@@ -1,0 +1,42 @@
+{{#if showAlert}}
+<div class="alert alert-success">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	Thêm thành công
+</div>
+{{/if}}
+
+<form action="" method="POST" role="form" style="color: gray;">
+	<div class="form-group">
+		<label style="color: gray;">Tài khoản</label>
+		<input type="text" class="form-control" id="f_Username" name="f_Username" placeholder="Tên tài khoản">
+	</div>
+	<div class="form-group">
+		<label style="color: gray;">Mật khẩu</label>
+		<input type="password" class="form-control" id="f_Password" name="f_Password" placeholder="Mật khẩu">
+	</div>
+	<div class="form-group">
+		<label style="color: gray;">Họ và tên chủ tài khoản</label>
+		<input type="text" class="form-control" id="f_Name" name="f_Name" placeholder="Họ và tên chủ tài khoản">
+	</div>
+	<div class="form-group">
+		<label for="">Email</label>
+		<input type="text" class="form-control" id="f_Email" name="f_Email" placeholder="Email">
+	</div>
+	<div class="form-group">
+		<label for="">Ngày tháng năm sinh</label>
+		<input type="text" class="form-control" id="f_DOB" name="f_DOB" placeholder="Ngày tháng năm sinh">
+	</div>
+	<div class="form-group">
+		<label for="">Quyền</label>
+		<input type="text" class="form-control" id="f_Permission" name="f_Permission" placeholder="Quyền">
+	</div>
+	
+	<a class="btn btn-outline-secondary" href="/admin/admin" role="button">
+		<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		Danh sách admin
+	</a>
+	<button type="submit" class="btn btn-success">
+		<i class="fa fa-check" aria-hidden="true"></i>
+		Thêm tài khoản
+	</button>
+</form>

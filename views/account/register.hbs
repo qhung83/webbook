@@ -1,0 +1,168 @@
+{{#section 'title'}}
+Đăng ký
+{{/section}}
+
+{{#if showError}}
+<div class="alert alert-success">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<strong>Title!</strong> {{errorMsg}}
+</div>
+{{/if}}
+
+{{#section 'css'}}
+<link rel="stylesheet" type="text/css" href="/assets/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+
+<link rel="stylesheet" type="text/css" href="/css/signup.css">
+
+{{/section}}
+
+
+{{#section 'js'}}
+<!-- jQuery library -->
+
+	<script src="/assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+	<script type="text/javascript">
+	        $('#txtDOB').datepicker({
+	        format:'d/m/yyyy',
+	        autoclose:true
+	        });
+	</script>
+
+<script type="text/javascript">
+	function kiemTraDangKy(){
+		var thongbao=document.getElementById("thongbao");
+		var thongbao1=document.getElementById("thongbao1");
+		var thongbao2=document.getElementById("thongbao2");
+		var thongbao3=document.getElementById("thongbao3");
+		var thongbao4=document.getElementById("thongbao4");
+		var thongbao5=document.getElementById("thongbao5");
+		if(frmDangKy.username.value==""){
+			thongbao.style.display="block";
+			thongbao.style.color="red";
+			return false;
+		}
+		else{
+			thongbao.style.display="none";
+		}
+
+		if(frmDangKy.rawPWD.value==""){
+			thongbao1.style.display="block";
+			thongbao1.style.color="red";
+			return false;
+		}
+		else{
+			thongbao1.style.display="none";
+		}
+
+
+		if(frmDangKy.cPWD.value==""){
+			thongbao2.style.display="block";
+			thongbao2.style.color="red";
+			return false;
+		}
+		else{
+			thongbao2.style.display="none";
+		}
+
+		if(frmDangKy.rawPWD.value!=frmDangKy.cPWD.value){
+			thongbao3.style.display="block";
+			thongbao3.style.color="red";
+			return false;
+		}
+		else{
+			thongbao3.style.display="none";
+		}
+
+		if(frmDangKy.name.value==""){
+			thongbao4.style.display="block";
+			thongbao4.style.color="red";
+			return false;
+		}
+		else{
+			thongbao4.style.display="none";
+		}
+
+	
+
+		return true;}
+	</script>
+
+{{/section}}
+
+
+<div class="jumbotron" style="background-color: whitesmoke;">
+			<h1>Đăng ký</h1>
+			<div class="row">
+				<div class="col-sm-7">
+					<form id="frmDangKy" action="" method="POST" role="form">
+						<div class="form-group">
+							<label for="txtUsername">Tên tài khoản:</label>
+
+							<input type="text" class="form-control col-sm-10" id="txtUsername" name="username" placeholder="Tên Tài Khoản">
+							<p id="thongbao" style="display:none">Mời bạn nhập tên tài khoản</p>
+
+						</div>
+
+						<div class="form-group">
+							<label for="txtPWD">Mật khẩu:</label>
+
+							<input type="password" class="form-control col-sm-10" id="txtPWD" name="rawPWD" placeholder="Mật Khẩu">
+							<p id="thongbao1" style="display:none">Mời bạn nhập mật khẩu</p>
+
+						</div>
+
+						<div class="form-group">
+							<label for="txtCPWD">Nhập lại mật khẩu:</label>
+
+							<input type="password" class="form-control col-sm-10" id="txtCPWD" name="cPWD" placeholder="Nhập Lại Mật Khẩu">
+							<p id="thongbao2" style="display:none">Nhập lại mật khẩu</p>
+							<p id="thongbao3" style="display:none">Mật khẩu nhập không chính xác.Mời bạn nhập lại mật khẩu</p>
+
+
+						</div>
+
+						<div class="form-group">
+							<label for="txtName">Họ tên:</label>
+
+							<input type="text" class="form-control col-sm-10" id="txtName" name="name" placeholder="Họ tên">
+							<p id="thongbao4" style="display:none">Mời bạn nhập họ tên</p>
+
+						</div>
+						<div class="form-group">
+							<label for="txtEmail">Email:</label>
+								<input type="hidden" class="form-control col-sm-10" id="txtEmail" name="email" placeholder="Email Address">
+							<input type="text" class="form-control col-sm-10" id="txtEmail" name="email" placeholder="Email Address">
+							<p id="thongbao5" style="display:none">Email không hợp lệ</p>
+
+						</div>
+
+						<div class="form-group">
+							<label for="txtDOB">Ngày Sinh:</label>
+								<input type="hidden" class="form-control col-sm-10" id="permission" name="permission" value="khachhang">
+							<input type="text" class="form-control col-sm-10" id="txtDOB" placeholder="d/m/yyyy" name="dob"/>
+
+						</div>     
+
+						<h5 class="noiquyDK">Khi bạn nhấn Đăng ký, bạn đã đồng ý thực hiện mọi giao dịch mua bán theo <span style="color:blue">điều kiện sử dụng và chính sách của chúng tôi.</span></h5>
+
+						<div class="form-group">
+
+							<div class="col-md-offset-3 col-md-8" style="margin-left: 0px;padding-left: 0px;">
+								<button id="btn-signup"  style="margin-left: 0px;padding-left: 0px;width: 200px;background-color: skyblue;color:black;" type="submit" class="btn btn-info SignUp" onclick="return kiemTraDangKy()"><span class="fa fa-user">&nbsp;&nbsp;</span>Đăng ký</button>
+							</div>
+						</div>
+
+						<div class="Dacotk">Đã có tài khoản?Kích<span style="color:blue;cursor:pointer"><a id="dangnhap" href="/account/login"> ở đây.</a></div>
+					</form>
+				</div>
+				{{!-- <div class="col-sm-5">
+					<div class="taotaikhoan"><label for="taotaikhoan">Tạo tài khoản</label></div>
+					<div class="mota">Tạo tài khoản để theo dõi đơn hàng, lưu
+						danh sách sản phẩm yêu thích, nhận 
+					nhiều ưu đãi hấp dẫn.</div>
+					<img src="/img/graphic-map.png" alt="">
+				</div> --}}
+			</div>
+		</div> <!--end row dangky-->
+	</div>

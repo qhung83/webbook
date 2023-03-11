@@ -1,0 +1,67 @@
+{{#if showAlert}}
+<div class="alert alert-success">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	Thêm thành công
+</div>
+{{/if}}
+
+<form action="" method="POST" role="form">
+	<div class="form-group">
+		<label for="">Tên sản phẩm</label>
+		<input type="text" class="form-control" id="" name="ProName" placeholder="Tên sản phẩm">
+	</div>
+	<div class="form-group">
+		<label for="">Giá sản phẩm</label>
+		<input type="text" class="form-control" id="Price" name="Price" placeholder="Giá sản phẩm">
+	</div>
+	<div class="form-group">
+		<label for="">Mô tả</label>
+		<input type="text" class="form-control" id="Description" name="Description" placeholder="Mô tả">
+	</div>
+	{{!-- <div class="form-group">
+		<label for="">Ảnh sản phẩm</label>
+		<input type="text" class="form-control" id="images" name="images" placeholder="Ảnh sản phẩm">
+	</div> --}}
+		<div class="form-group">
+		<label for="">Ảnh sản phẩm</label>
+		<br>
+		<input type="file" class="form-controll" id="images" name="images" placeholder="Ảnh sản phẩm" value="anh1.png">
+	</div>
+
+					<a href="#">{{CatName}}</a>
+					
+	<div class="form-group">
+		<label for="">Loại sản phẩm</label>
+		<br>
+		{{!-- <input type="text" class="form-control" id="CatID" name="CatID" placeholder="Loại sản phẩm"> --}}
+		<select name="CatID" id="CatID" style="width: 200px;height: 35px;">
+				
+			<option value="">Loại sản phẩm</option>
+			{{#each layoutVM.categories}}
+			<option value="{{CatID}}">{{CatName}}</option>
+			
+		{{/each}}
+			
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="">Tác giả</label>
+		<br>
+		{{!-- <input type="text" class="form-control" id="BrandID" name="BrandID" placeholder="Thương hiệu"> --}}
+		<select name="BrandID" id="BrandID" style="width: 200px;height: 35px;">
+			<option value="">Tác giả</option>
+			{{#each layoutVM.brands}}
+			<option value="{{BrandID}}">{{BrandName}}</option>
+			
+			{{/each}}
+		</select>
+	</div>
+	<a class="btn btn-outline-secondary" href="/admin/sanpham" role="button">
+		<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		Danh sách sản phẩm
+	</a>
+	<button type="submit" class="btn btn-success">
+		<i class="fa fa-check" aria-hidden="true"></i>
+		Thêm
+	</button>
+</form>
