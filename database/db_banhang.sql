@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 05, 2023 lúc 04:02 PM
--- Phiên bản máy phục vụ: 10.4.24-MariaDB
--- Phiên bản PHP: 8.1.4
+-- Host: 127.0.0.1
+-- Generation Time: Nov 11, 2021 at 03:44 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `db_banhang`
+-- Database: `db_banhang`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `brands`
+-- Table structure for table `brands`
 --
 
 CREATE TABLE `brands` (
@@ -33,23 +33,18 @@ CREATE TABLE `brands` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `brands`
+-- Dumping data for table `brands`
 --
 
 INSERT INTO `brands` (`BrandID`, `BrandName`) VALUES
-(19, 'Phụ Nữ Việt Nam'),
-(18, 'NXB Hội Nhà Văn'),
-(20, 'A Crazy Mind'),
-(21, 'Higashino Keigo'),
-(22, 'Duncan Bannatyne'),
-(23, 'Harvard Business Review'),
-(24, 'Yoshichi Shimada, Saburo Ishikawa'),
-(25, 'Park In Seo, Choi Sang');
+(1, 'Philipper Auguste'),
+(2, 'Epos Swiss'),
+(3, 'Diamond D');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -58,18 +53,18 @@ CREATE TABLE `categories` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`CatID`, `CatName`) VALUES
-(1, 'Manga-comic'),
-(2, 'Kinh tế'),
-(3, 'Văn học');
+(1, 'Đồng hồ nam'),
+(2, 'Đồng hồ nữ'),
+(3, 'Đồng hồ cặp');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `details`
+-- Table structure for table `details`
 --
 
 CREATE TABLE `details` (
@@ -87,10 +82,30 @@ CREATE TABLE `details` (
   `Chedobaohanh` varchar(200) CHARACTER SET utf8 NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `details`
+--
+
+INSERT INTO `details` (`DetailID`, `ProID`, `Duongkinhmat`, `Chongnuoc`, `Chatlieumat`, `Nangluongsudung`, `Sizeday`, `Chatlieuday`, `Chatlieuvo`, `Kieudang`, `Xuatxu`, `Chedobaohanh`) VALUES
+(41, 72, '28mm', '\r\n3ATM', '\r\nKính sapphire', 'Quartz/Pin', '\r\n12mm', '\r\nHợp kim mạ PVD', 'Hợp kim mạ PVD , đính đá swarovsky', '\r\nĐồng hồ Nữ', '\r\nChina', '\r\nBảo hành quốc tế 10 năm'),
+(42, 73, '\r\n24mm', '\r\n3ATM', '\r\nKính sapphire', '\r\nQuartz/Pin', '12mm', '\r\nHợp kim mạ PVD', '\r\nHợp kim mạ PVD , đính đá swarovsky', '\r\nĐồng hồ Nữ', '\r\nChina', '\r\nBảo hành quốc tế 10 năm'),
+(43, 62, '\r\n40 mm', '\r\n5 ATM', '\r\nSapphire', '\r\nAutomatic (Cơ tự động)', '', '\r\nStainless Steel', '\r\nStainless Steel', '\r\nĐồng hồ Nam', '\r\nÁo', '\r\nBảo hành quốc tế 02 năm'),
+(44, 63, '40 mm', '\r\n5 ATM', '\r\nSapphire', '\r\nAutomatic ( cơ tự động )', '\r\n20 mm', '\r\nDây da', '\r\nStainless Steel', '\r\nĐồng hồ Nam', '\r\nÁo', '\r\nBảo hành quốc tế 02 năm'),
+(45, 64, '\r\n42 mm', '\r\n5 ATM', '\r\nSapphire', '\r\nAutomatic (Cơ tự động)', '\r\n22 mm', '\r\nDây da chính hãng', '\r\nStainless Steel', '\r\nĐồng hồ Nam', '\r\nChina', '\r\nBảo hành quốc tế 02 năm'),
+(46, 65, '\r\n40 mm', '\r\n5 ATM', '\r\nSapphire', '\r\nAutomatic (Cơ tự động)', '', '\r\nDây da chính hãng', 'Stainless Steel', '\r\nĐồng hồ Nam', '\r\nÁo', '\r\nBảo hành quốc tế 02 năm'),
+(47, 66, '\r\n43.5 mm', '\r\n5 ATM', '\r\nSapphire', 'Máy cơ lên cót bằng tay\r\n\r\n', '\r\n20 mm', '\r\nDây da', '\r\nStainless Steel', '\r\nĐồng hồ Nam', '\r\nThụy Sỹ', '\r\nBảo hành quốc tế 02 năm'),
+(48, 67, '\r\n43.5 mm', '\r\n5 ATM', '\r\nSapphire', 'Máy cơ lên cót bằng tay', '20 mm', '\r\nDây da', 'Stainless Steel', '\r\nĐồng hồ Nam', '\r\nThụy Sỹ', '\r\nBảo hành quốc tế 02 năm'),
+(49, 61, '39 mm', '\r\n5 ATM', '\r\nSapphire', 'Quartz/Pin', '', 'Stainless Steel', '\r\nStainless Steel', '\r\nNam', 'Áo', '\r\nBảo hành quốc tế 02 năm'),
+(50, 71, '\r\n26mm', '\r\n3ATM', '\r\nKính sapphire', '\r\nQuartz/Pin', '\r\n8mm', '\r\nHợp kim mạ PVD rose gold , đính đá swarovsky', '\r\nHợp kim mạ PVD , đính đá swarovsky', '\r\nĐồng hồ Nữ', '\r\nChina', '\r\nBảo hành quốc tế 10 năm'),
+(51, 68, '\r\n34mm', '\r\n3ATM', '\r\nKính sapphire', '\r\nQuartz (Điện tử)', '\r\n16mm', '\r\nThép không gỉ mạ PVD', '\r\nThép không gỉ mạ PVD', '\r\nĐồng hồ Nữ', 'Thụy Sỹ', '\r\nBảo hành quốc tế 02 năm'),
+(52, 69, '\r\n34mm', '\r\n3ATM', '\r\nKính sapphire', '\r\nQuartz (Điện tử)', '\r\n16mm', '\r\nThép không gỉ mạ PVD', '\r\nThép không gỉ mạ PVD', '\r\nĐồng hồ Nữ', '\r\nThụy Sỹ', '\r\nBảo hành quốc tế 02 năm'),
+(56, 83, ' Nam 42 mm / nữ 34 mm', ' Nam 10 ATM / nữ 5 ATM', ' Sapphire', ' Quartz/Pin', '', ' Dây da chính hãng', ' Stainless Steel', ' Đồng hồ đôi', '', ' Bảo hành quốc tế 02 năm'),
+(57, 84, ' Nam 42 mm / nữ 34 mm', ' Nam 10 ATM / nữ 5 ATM', ' Sapphire', ' Quartz/Pin', '', 'Dây da chính hãng', ' Stainless Steel', 'Đồng hồ đôi', '', ' Bảo hành quốc tế 02 năm');
+
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `orderdetails`
+-- Table structure for table `orderdetails`
 --
 
 CREATE TABLE `orderdetails` (
@@ -103,10 +118,24 @@ CREATE TABLE `orderdetails` (
   `Amount` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `orderdetails`
+--
+
+INSERT INTO `orderdetails` (`ID`, `OrderID`, `ProID`, `TenSanPham`, `Quantity`, `Price`, `Amount`) VALUES
+(19, 96, 73, '                         Đồng hồ Diamond D DM36505IG - Nữ   ', 3, 4500000, 13500000),
+(20, 96, 72, '                         Đồng hồ Diamond D DM38445IG - Nữ   ', 4, 4000000, 16000000),
+(18, 96, 69, 'Đồng hồ Epos Swiss E-8000.700.22.88 - Nữ', 2, 60000000, 120000000),
+(26, 99, 69, 'Đồng hồ Epos Swiss E-8000.700.22.88 - Nữ', 2, 60000000, 120000000),
+(25, 99, 84, 'ĐỒNG HỒ PHILIPPE AUGUSTE + Diamond D', 1, 8000000, 8000000),
+(23, 98, 72, '                         Đồng hồ Diamond D DM38445IG - Nữ   ', 1, 4000000, 4000000),
+(24, 98, 83, 'Đồng hồ Philippe Auguste PA5006G + Diamond D', 1, 12000000, 12000000),
+(27, 100, 72, '                         Đồng hồ Diamond D DM38445IG - Nữ   ', 1, 4000000, 4000000);
+
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE `orders` (
@@ -120,10 +149,20 @@ CREATE TABLE `orders` (
   `Trangthai` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Đang chờ xử lý'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`OrderID`, `OrderDate`, `UserID`, `Tenkhachhang`, `Address`, `Total`, `Phone`, `Trangthai`) VALUES
+(96, '2021-11-10 18:56:53', 23, 'Bùi Quang Huy', '111-Bùi Quang Huy', 149500000, '0868400973', 'Đang chờ xử lý'),
+(99, '2021-11-11 09:36:07', 23, 'Bùi Quang Huy', 'Phú Thọ', 128000000, '0868400973', 'Đang chờ xử lý'),
+(98, '2021-11-11 09:23:46', 3, 'Bùi Quang Huy', 'hn', 16000000, '0868400973', 'Đang chờ xử lý'),
+(100, '2021-11-11 09:36:56', 23, 'Bùi Quang Huy', '', 4000000, '', 'Đang chờ xử lý');
+
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -141,30 +180,29 @@ CREATE TABLE `products` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`ProID`, `ProName`, `Description`, `Price`, `Quantity`, `Viewer`, `Sold`, `Date`, `CatID`, `BrandID`, `images`) VALUES
-(110, 'Người Bà Tài Giỏi Vùng Saga - Tập 2', 'Người bà tài giỏi vùng Saga 2 – Đứa trẻ Saga đích thực  Năm Chiêu Hòa thứ 33 (1958), cậu bé Akihiro được mẹ gửi từ Hiroshima tới sống cùng bà ngoại tại vùng quê Saga nghèo khó. Kể từ đó cuộc sống của Akihiro hoàn toàn thay đổi. Từ một đứa trẻ nhõng nhẽo mít ướt, giờ đây Akihiro đã biết tự làm rất nhiều việc: thổi cơm, xách nước, quét dọn, vớt thức ăn ngoài sông,…', 45000, 0, 0, 0, '2023-01-05 21:24:48', 1, 24, 'anh33.jpg'),
-(109, 'Người Bà Tài Giỏi Vùng Saga - Tập 1', 'NGƯỜI BÀ TÀI GIỎI VÙNG SAGA – Tạm biệt Hiroshima, xin chào Saga!  Bộ truyện được họa sĩ Saburo Ishikawa minh họa dựa trên cuốn hồi ký của nghệ sĩ hài Yoshichi Shimada, kể về tuổi thơ bên người bà tại vùng đất Saga cằn cỗi, nghèo khó', 52000, 0, 0, 0, '2023-01-05 21:24:00', 1, 24, 'anh32.jpg'),
-(108, 'Người Bà Tài Giỏi Vùng Saga - Tập 7 ', 'Người bà tài giỏi vùng Saga 7 – Vị khách ngoại quốc xuất hiện!  Cậu bé Akihiro vẫn đang sống cùng bà ngoại ở vùng ngoại ô Saga nghèo khó mà ấm áp tình người. Tuy rất nhớ người mẹ thân yêu ở Hiroshima, nhưng sự xuất hiện của những vị khách “dữ thần” từ nơi khác đến đã khiến cho Akihiro chẳng còn thời gian để buồn phiền nữa.', 52000, 0, 0, 0, '2023-01-05 21:22:58', 1, 24, 'anh31.jpg'),
-(107, 'HBR On - AI Và Kỷ Nguyên Máy Móc Mới', 'Cuốn sách bao gồm các bài viết về chủ đề trí tuệ nhân tạo (AI) và các ứng dụng của trí tuệ nhân tạo cũng như thuật toán trong cuộc sống và công việc.  Cuốn sách cho bạn biết:  AI đang được ứng dụng vào doanh nghiệp như thế nào.', 188000, 0, 0, 0, '2023-01-05 21:20:41', 2, 23, 'anh23.jpg'),
-(106, 'Tiền Đẻ Ra Tiền - Đầu Tư Tài Chính Thông Minh', 'Sau sự thành công của hai cuốn sách “Thức tỉnh và thay đổi cuộc đời bạn: Bí quyết thành công của triệu phú Anh” và “Quản lý thời gian thông minh của người thành đạt: Bí quyết thành công của triệu phú Anh” là những câu chuyện, những lời khuyên dựa trên những kinh nghiệm phong phú của cuộc đời mình và nhằm mục đích truyền cảm hứng động lực làm giàu cho mọi công dân đều có thể trở thành triệu phú, thì triệu phú người Anh và tác giả của nhiều đầu sách nổi tiếng Duncan Bannatyne đã cho ra mắt cuốn sách “ Tiền Đẻ Ra Tiền – Đầu Tư Tài Chính Thông Minh”.', 96000, 0, 0, 0, '2023-01-05 21:19:06', 2, 22, 'anh22.jpg'),
-(101, 'Đầu Tư Chứng Khoán: Chơi Trò May Rủi Hay Tích Lũy Tài Chính', 'Cuốn sách “Đầu tư chứng khoán: Chơi trò may rủi hay tích lũy tài chính?” giúp cho độc giả hiểu rõ những kiến thức cơ bản về đầu tư: cách tính tỷ suất lợi nhuận, những rủi ro trong đầu tư chứng khoán, các công cụ đầu tư, sự khác nhau giữa giá và giá trị, các chiến lược đầu tư, và đặc biệt là sự khác biệt giữa đầu tư may rủi và đầu tư có phương pháp để tích lũy tài chính.', 240000, 0, 0, 0, '2023-01-05 16:50:00', 2, 18, 'anh21.jpg'),
-(100, 'Ngôi Nhà Của Người Cá Say Ngủ (Tái Bản 2020)', 'Ngôi nhà của người cá say ngủ là tác phẩm thứ hai của nhà văn Higashino Keigo được xuất bản trong năm 2015, cũng là tác phẩm thứ hai kỷ niệm 30 năm cầm bút của ông. Trong tác phẩm này, Keigo đã lấn sâu ngòi bút của mình vào một đề tài tâm lý xã hội và y học khó nhằn, để lại trong lòng người đọc rất nhiều trăn trở.', 103000, 0, 0, 0, '2023-01-05 16:11:17', 3, 21, 'anh15.jpg'),
-(99, 'Điều Kỳ Diệu Của Tiệm Tạp Hóa Namiya (Tái Bản 2018)', 'Một đêm vội vã lẩn trốn sau phi vụ khoắng đồ nhà người, Atsuya, Shota và Kouhei đã rẽ vào lánh tạm trong một căn nhà hoang bên con dốc vắng người qua lại. Căn nhà có vẻ khi xưa là một tiệm tạp hóa với biển hiệu cũ kỹ bám đầy bồ hóng, khiến người ta khó lòng đọc được trên đó viết gì. Định bụng nghỉ tạm một đêm rồi sáng hôm sau chuồn sớm, cả ba không ngờ chờ đợi cả bọn sẽ là một đêm không ngủ, với bao điều kỳ bí bắt đầu từ một phong thư bất ngờ gửi đến…', 84000, 0, 0, 0, '2023-01-05 16:10:14', 3, 21, 'anh14.jpg'),
-(102, 'Cây Cam Ngọt Của Tôi', '“Vị chua chát của cái nghèo hòa trộn với vị ngọt ngào khi khám phá ra những điều khiến cuộc đời này đáng sống... một tác phẩm kinh điển của Brazil.” - Booklist  “Một cách nhìn cuộc sống gần như hoàn chỉnh từ con mắt trẻ thơ… có sức mạnh sưởi ấm và làm tan nát cõi lòng, dù người đọc ở lứa tuổi nào.” - The National', 75000, 0, 0, 0, '2023-01-05 21:15:22', 3, 18, 'cay_cam.jpg'),
-(103, 'Yêu Những Ngày Nắng Chẳng Ghét Những Ngày Mưa', 'Sau thành công của “Tô bình yên vẽ hạnh phúc” và “Mình chỉ là người bình thường”, chàng họa sĩ nổi tiếng đa tài Kulzsc đã quay trở lại với “Yêu những ngày nắng Chẳng ghét những ngày mưa”. Cuốn sách là sự kết hợp hài hòa và thú vị của thể loại Sách tản văn và Sách tô màu.  Đặc biệt hơn cả, “Yêu những ngày nắng Chẳng ghét những ngày mưa” còn là hành trình VẼ ĐỂ CHỮA LÀNH. Qua 168 trang sách, Kulzsc khéo léo dẫn bạn vào thế giới đầy màu sắc với đầy đủ cung bậc cảm xúc. Nơi bạn có thể thoải mái bật cười nhưng đồng thời cũng có thể thả lỏng để nỗi buồn trôi đi.', 102000, 0, 0, 0, '2023-01-05 21:16:25', 3, 19, 'anh11.jpg'),
-(98, 'Có Ai Ở Đó Không?', '\"CÓ AI Ở ĐÓ KHÔNG\" – cuốn sách giúp bạn giải thoát khỏi “giếng sâu” của tâm hồn  Có bao giờ bạn giật mình tỉnh dậy giữa đêm, thảng thốt bật lên tiếng gọi ai đó nhưng chợt nhận ra bản thân chẳng có một ai để cất lên tiếng gọi ấy không?  Có bao giờ bạn tự mình thụt vào vỏ ốc rồi đắm mình xuống đại dương rộng lớn của cuộc đời, tưởng như muốn trốn tránh hết thảy nhưng sâu thẳm trong tâm hồn vẫn mong chờ một cái nắm tay níu giữ không?  Cuốn sách mới nhất từ A Crazy Mind là một ấn phẩm mang đầy những câu hỏi như vậy.', 77000, 0, 0, 0, '2023-01-05 16:08:51', 3, 19, 'anh13.jpg'),
-(104, 'Những Đêm Không Ngủ Những Ngày Chậm Trôi', '“Những đêm không ngủ, những ngày chậm trôi” đại diện cho một hành tinh mới - nơi nỗi đau tinh thần được đưa ra ánh sáng và chữa lành.  Cuốn sách là tập hợp những câu chuyện có thật của những số phận khác nhau đang gặp phải các vấn đề về tâm lý: trầm cảm, rối loạn lo âu, rối loạn lưỡng cực… và những người đang học tập và làm việc trong ngành tâm lý học. ', 68000, 0, 0, 0, '2023-01-05 21:17:11', 3, 20, 'anh12.jpg'),
-(105, 'Những Đêm Không Ngủ Những Ngày Chậm Trôi', '“Những đêm không ngủ, những ngày chậm trôi” đại diện cho một hành tinh mới - nơi nỗi đau tinh thần được đưa ra ánh sáng và chữa lành.  Cuốn sách là tập hợp những câu chuyện có thật của những số phận khác nhau đang gặp phải các vấn đề về tâm lý: trầm cảm, rối loạn lo âu, rối loạn lưỡng cực… và những người đang học tập và làm việc trong ngành tâm lý học. ', 68000, 0, 0, 0, '2023-01-05 21:18:32', 3, 20, 'anh12.jpg'),
-(111, 'Đội Quân Nhí Nhố - Tập 38', 'Là một bộ manhwa hài hước của Hàn Quốc do hai tác giả Park In-seo và Choi Sang sáng tác. Nhân vật chính của truyện là các thầy trò cực kỳ nhí nhố, với các tình tiết hài không đụng hàng luôn làm độc giả bất ngờ, đồng thời liên tục xuất hiện các nhân vật mới. Đội quân nhí nhố là bộ tranh truyện hài hước, vui nhộn của Hàn Quốc, được xem là \"đối thủ xứng tầm\" so với Ô Long Viện của Đài Loan. Nhân vật chính của bộ truyện cũng là các thầy trò cực kỳ phá phách, nghịch ngợm, luôn bày ra hàng đống trò quậy phá không-đụng-hàng.', 20000, 0, 0, 0, '2023-01-05 21:26:16', 1, 25, 'anh34.jpg'),
-(112, 'Đội Quân Nhí Nhố - Tập 28', 'Là một bộ manhwa hài hước của Hàn Quốc do hai tác giả Park In-seo và Choi Sang sáng tác. Nhân vật chính của truyện là các thầy trò cực kỳ nhí nhố, với các tình tiết hài không đụng hàng luôn làm độc giả bất ngờ, đồng thời liên tục xuất hiện các nhân vật mới. Đội quân nhí nhố là bộ tranh truyện hài hước, vui nhộn của Hàn Quốc, được xem là \"đối thủ xứng tầm\" so với Ô Long Viện của Đài Loan. Nhân vật chính của bộ truyện cũng là các thầy trò cực kỳ phá phách, nghịch ngợm, luôn bày ra hàng đống trò quậy phá không-đụng-hàng.', 20000, 0, 0, 0, '2023-01-05 21:27:02', 1, 25, 'anh35.jpg');
+(83, 'Đồng hồ Philippe Auguste PA5006G + Diamond D', 'Thương hiệu:Đồng hồ cặp,Kiểu dáng: Đồng hồ nữ,nam,Năng lượng: Quartz,Chất liệu vỏ: Hợp kim mạ PVD , đính đá swarovsky,Chất liệu dây:Hợp kim mạ PVD,Mặt kính: Sapphire ( Kính chống trầy ),Kích thước: 28 mm,Chống nước: 3 ATM,Bảo hành: 10 năm về máy và đá , 2 năm về pin,Thương hiệu: Anh ,Máy: Japan Myota citizen Quartz', 12000000, 20, 0, 0, '2021-10-26 11:28:10', 3, 1, 'anh32.jpg'),
+(84, 'ĐỒNG HỒ PHILIPPE AUGUSTE + Diamond D', 'Thương hiệu:Đồng hồ cặp,Kiểu dáng: Đồng hồ nữ,nam,Năng lượng: Quartz,Chất liệu vỏ: Hợp kim mạ PVD , đính đá swarovsky,Chất liệu dây:Hợp kim mạ PVD,Mặt kính: Sapphire ( Kính chống trầy ),Kích thước: 28 mm,Chống nước: 3 ATM,Bảo hành: 10 năm về máy và đá , 2 năm về pin,Thương hiệu: Anh ,Máy: Japan Myota citizen Quartz', 8000000, 14, 0, 0, '2021-10-26 12:12:09', 3, 1, 'anh31.jpg'),
+(71, '                         Đồng hồ Diamond D DM38025IG - Nữ   ', 'Thương hiệu: Đồng hồ nữ Diamond D,\r\n\r\nKiểu dáng: Đồng hồ nữ,\r\n\r\nNăng lượng: Quartz,\r\n\r\nChất liệu vỏ: Hợp kim mạ PVD , đính đá swarovsky,\r\n\r\nChất liệu dây:Hợp kim mạ PVD,\r\n\r\nMặt kính: Sapphire ( Kính chống trầy ),\r\n\r\n\r\nKích thước: 28 mm,\r\n\r\nChống nước: 3 ATM,\r\n\r\nBảo hành: 10 năm về máy và đá , 2 năm về pin,\r\n\r\nThương hiệu: Anh ,\r\n\r\nMáy: Japan Myota citizen Quartz', 10000000, 10, 0, 0, '2021-10-22 19:10:38', 2, 3, 'anh21.jpg'),
+(72, '                         Đồng hồ Diamond D DM38445IG - Nữ   ', 'Thương hiệu: Đồng hồ nữ Diamond D,\r\n\r\nKiểu dáng: Đồng hồ nữ,\r\n\r\nNăng lượng: Quartz,\r\n\r\nChất liệu vỏ: Hợp kim mạ PVD , đính đá swarovsky,\r\n\r\nChất liệu dây:Hợp kim mạ PVD,\r\n\r\nMặt kính: Sapphire ( Kính chống trầy ),\r\n\r\n\r\nKích thước: 28 mm,\r\n\r\nChống nước: 3 ATM,\r\n\r\nBảo hành: 10 năm về máy và đá , 2 năm về pin,\r\n\r\nThương hiệu: Anh ,\r\n\r\nMáy: Japan Myota citizen Quartz', 4000000, 30, 0, 0, '2021-10-22 19:12:12', 2, 3, 'anh22.jpg'),
+(73, '                         Đồng hồ Diamond D DM36505IG - Nữ   ', 'Thương hiệu: Đồng hồ nữ Diamond D\r\n\r\nKiểu dáng: Đồng hồ nữ\r\n\r\nNăng lượng: Quartz\r\n\r\nChất liệu vỏ: Hợp kim mạ PVD , đính đá swarovsky\r\n\r\nChất liệu dây: Hợp kim mạ PVD\r\n\r\nMặt kính: Sapphire ( Kính chống trầy )\r\n\r\nKích thước : 24mm\r\n\r\nChống nước : 3 ATM\r\n\r\nBảo hành: 10 năm về máy và đá , 2 năm về pin\r\n\r\nThương hiệu: Anh \r\n\r\nMáy: Japan Myota citizen Quartz', 4500000, 5, 0, 0, '2021-10-22 19:14:05', 2, 3, 'anh23.jpg'),
+(62, 'Đồng hồ Philippe Auguste PA5001D- Nam', 'Thương hiệu: Đồng hồ Philippe Auguste PA5001D,\r\n\r\nKiểu dáng: Đồng hồ nam,\r\n\r\nNăng lượng: Quartz,\r\n\r\nChất liệu vỏ: Hợp kim mạ PVD , đính đá swarovsky,\r\n\r\nChất liệu dây:Hợp kim mạ PVD,\r\n\r\nMặt kính: Sapphire ( Kính chống trầy ),\r\n\r\n\r\nKích thước: 28 mm,\r\n\r\nChống nước: 3 ATM,\r\n\r\nBảo hành: 10 năm về máy và đá , 2 năm về pin,\r\n\r\nThương hiệu: Anh ,\r\n\r\nMáy: Japan Myota citizen Quartz', 5000000, 6, 0, 0, '2021-10-22 16:44:41', 1, 1, 'anh2.jpg'),
+(63, '  Đồng hồ Philippe Auguste PA5008A - Nam', 'Thương hiệu: Đồng hồ Philippe Auguste PA5001D,\r\n\r\nKiểu dáng: Đồng hồ nam,\r\n\r\nNăng lượng: Quartz,\r\n\r\nChất liệu vỏ: Hợp kim mạ PVD , đính đá swarovsky,\r\n\r\nChất liệu dây:Hợp kim mạ PVD,\r\n\r\nMặt kính: Sapphire ( Kính chống trầy ),\r\n\r\n\r\nKích thước: 28 mm,\r\n\r\nChống nước: 3 ATM,\r\n\r\nBảo hành: 10 năm về máy và đá , 2 năm về pin,\r\n\r\nThương hiệu: Anh ,\r\n\r\nMáy: Japan Myota citizen Quartz', 10000000, 9, 0, 0, '2021-10-22 16:47:39', 1, 1, 'anh3.jpg'),
+(64, 'ĐỒNG HỒ PHILIPPE AUGUSTE PA-555.1 - Nam', 'Thương hiệu: Đồng hồ Philippe Auguste PA5001D,\r\n\r\nKiểu dáng: Đồng hồ nam,\r\n\r\nNăng lượng: Quartz,\r\n\r\nChất liệu vỏ: Hợp kim mạ PVD , đính đá swarovsky,\r\n\r\nChất liệu dây:Hợp kim mạ PVD,\r\n\r\nMặt kính: Sapphire ( Kính chống trầy ),\r\n\r\n\r\nKích thước: 28 mm,\r\n\r\nChống nước: 3 ATM,\r\n\r\nBảo hành: 10 năm về máy và đá , 2 năm về pin,\r\n\r\nThương hiệu: Anh ,\r\n\r\nMáy: Japan Myota citizen Quartz', 15000000, 18, 0, 0, '2021-10-22 16:49:23', 1, 1, 'anh4.jpg'),
+(65, ' Đồng hồ Philippe Auguste PA5002B - Nam', 'Thương hiệu: Đồng hồ Philippe Auguste PA5002B,\r\n\r\nKiểu dáng: Đồng hồ nam,\r\n\r\nNăng lượng: Quartz,\r\n\r\nChất liệu vỏ: Hợp kim mạ PVD , đính đá swarovsky,\r\n\r\nChất liệu dây:Hợp kim mạ PVD,\r\n\r\nMặt kính: Sapphire ( Kính chống trầy ),\r\n\r\n\r\nKích thước: 28 mm,\r\n\r\nChống nước: 3 ATM,\r\n\r\nBảo hành: 10 năm về máy và đá , 2 năm về pin,\r\n\r\nThương hiệu: Anh ,\r\n\r\nMáy: Japan Myota citizen Quartz', 6000000, 22, 0, 0, '2021-10-22 16:53:17', 1, 1, 'anh5.jpg'),
+(66, ' ĐỒNG HỒ EPOS SWISS E-3435.313.20.25.25 - Nam', 'Thương hiệu: Đồng hồ EPOS SWISS E-3435.313.20.25.25,\r\n\r\nKiểu dáng: Đồng hồ nam,\r\n\r\nNăng lượng: Quartz,\r\n\r\nChất liệu vỏ: Hợp kim mạ PVD , đính đá swarovsky,\r\n\r\nChất liệu dây:Hợp kim mạ PVD,\r\n\r\nMặt kính: Sapphire ( Kính chống trầy ),\r\n\r\n\r\nKích thước: 28 mm,\r\n\r\nChống nước: 3 ATM,\r\n\r\nBảo hành: 10 năm về máy và đá , 2 năm về pin,\r\n\r\nThương hiệu: Anh ,\r\n\r\nMáy: Japan Myota citizen Quartz', 10000000, 30, 0, 0, '2021-10-22 18:15:51', 1, 2, 'anh11.jpg'),
+(67, ' ĐỒNG HỒ EPOS SWISS E-3435.313.24.26 - Nam', 'Thương hiệu: Đồng hồ EPOS SWISS E-3435.313.24.26,\r\n\r\nKiểu dáng: Đồng hồ nam,\r\n\r\nNăng lượng: Quartz,\r\n\r\nChất liệu vỏ: Hợp kim mạ PVD , đính đá swarovsky,\r\n\r\nChất liệu dây:Hợp kim mạ PVD,\r\n\r\nMặt kính: Sapphire ( Kính chống trầy ),\r\n\r\n\r\nKích thước: 28 mm,\r\n\r\nChống nước: 3 ATM,\r\n\r\nBảo hành: 10 năm về máy và đá , 2 năm về pin,\r\n\r\nThương hiệu: Anh ,\r\n\r\nMáy: Japan Myota citizen Quartz', 50000000, 40, 0, 0, '2021-10-22 18:21:32', 1, 2, 'anh12.jpg'),
+(68, 'Đồng hồ Epos Swiss E-8000.700.28.85 - Nữ', 'Thương hiệu: Đồng hồ Epos Swiss E-8000.700.28.85,\r\n\r\nKiểu dáng: Đồng hồ nữ,\r\n\r\nNăng lượng: Quartz,\r\n\r\nChất liệu vỏ: Hợp kim mạ PVD , đính đá swarovsky,\r\n\r\nChất liệu dây:Hợp kim mạ PVD,\r\n\r\nMặt kính: Sapphire ( Kính chống trầy ),\r\n\r\n\r\nKích thước: 28 mm,\r\n\r\nChống nước: 3 ATM,\r\n\r\nBảo hành: 10 năm về máy và đá , 2 năm về pin,\r\n\r\nThương hiệu: Anh ,\r\n\r\nMáy: Japan Myota citizen Quartz', 40000000, 10, 0, 0, '2021-10-22 18:57:25', 2, 2, 'anh13.jpg'),
+(69, 'Đồng hồ Epos Swiss E-8000.700.22.88 - Nữ', 'Thương hiệu: Đồng hồ Epos Swiss E-8000.700.22.88,\r\n\r\nKiểu dáng: Đồng hồ nữ,\r\n\r\nNăng lượng: Quartz,\r\n\r\nChất liệu vỏ: Hợp kim mạ PVD , đính đá swarovsky,\r\n\r\nChất liệu dây:Hợp kim mạ PVD,\r\n\r\nMặt kính: Sapphire ( Kính chống trầy ),\r\n\r\n\r\nKích thước: 28 mm,\r\n\r\nChống nước: 3 ATM,\r\n\r\nBảo hành: 10 năm về máy và đá , 2 năm về pin,\r\n\r\nThương hiệu: Anh ,\r\n\r\nMáy: Japan Myota citizen Quartz', 60000000, 10, 0, 0, '2021-10-22 18:59:38', 2, 2, 'anh14.jpg'),
+(61, 'ĐỒNG HỒ PHILIPPE AUGUSTE PA5005L - Nam', 'Thương hiệu: Đồng hồ Philippe Auguste PA5005L,\r\n\r\nKiểu dáng: Đồng hồ nam,\r\n\r\nNăng lượng: Quartz,\r\n\r\nChất liệu vỏ: Hợp kim mạ PVD , đính đá swarovsky,\r\n\r\nChất liệu dây:Hợp kim mạ PVD,\r\n\r\nMặt kính: Sapphire ( Kính chống trầy ),\r\n\r\n\r\nKích thước: 28 mm,\r\n\r\nChống nước: 3 ATM,\r\n\r\nBảo hành: 10 năm về máy và đá , 2 năm về pin,\r\n\r\nThương hiệu: Anh ,\r\n\r\nMáy: Japan Myota citizen Quartz', 7000000, 10, 0, 0, '2021-10-22 16:39:58', 1, 1, 'anh1.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `sessions`
+-- Table structure for table `sessions`
 --
 
 CREATE TABLE `sessions` (
@@ -174,20 +212,17 @@ CREATE TABLE `sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `sessions`
+-- Dumping data for table `sessions`
 --
 
 INSERT INTO `sessions` (`session_id`, `expires`, `data`) VALUES
-('Io7OdHKsVGv_kF12V-CHLNEU8OkPUeC2', 1672998782, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"isLogged\":true,\"user\":{\"f_ID\":1,\"f_Username\":\"admin\",\"f_Password\":\"1\",\"f_Name\":\"Admin\",\"f_Email\":\"admin1011@gmail.com\",\"f_DOB\":\"2000-10-10\",\"f_Permission\":\"admin\"},\"cart\":[{\"ProId\":\"101\",\"Quantity\":1},{\"ProId\":\"100\",\"Quantity\":0}]}'),
-('Lkj7yua0mlZkiCyJksvvkv5t2Geh4kwR', 1673013541, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"isLogged\":false}'),
-('PviIG6medEPm4s2FvhgpOak1tK9qrhsY', 1672998407, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"isLogged\":false}'),
-('jmKtwbH32mtZgiA5ZhqvntEy77fo7pny', 1673013921, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"isLogged\":true,\"user\":{\"f_ID\":1,\"f_Username\":\"admin\",\"f_Password\":\"1\",\"f_Name\":\"Admin\",\"f_Email\":\"admin1011@gmail.com\",\"f_DOB\":\"2000-10-10\",\"f_Permission\":\"admin\"},\"cart\":[]}'),
-('qVFhwjPrPkg7GPROC7ZsCTjOVapJ4Uor', 1673017207, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"isLogged\":true,\"user\":{\"f_ID\":1,\"f_Username\":\"admin\",\"f_Password\":\"1\",\"f_Name\":\"Admin\",\"f_Email\":\"admin1011@gmail.com\",\"f_DOB\":\"2000-10-10\",\"f_Permission\":\"admin\"},\"cart\":[{\"ProId\":\"111\",\"Quantity\":2}]}');
+('C8VXjlJYnnANmwha131eJt_30SIcvCdu', 1636636055, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"isLogged\":true,\"user\":{\"f_ID\":23,\"f_Username\":\"buihuy\",\"f_Password\":\"1\",\"f_Name\":\"Bùi Quang Huy\",\"f_Email\":\",buiquanghuy1011@gmail.com\",\"f_DOB\":\"2021-11-10T00:00\",\"f_Permission\":\"khachhang\"},\"cart\":[]}'),
+('buUGDlqyWc2xk_UnKBoUSkxvhirARvrE', 1636684995, '{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"isLogged\":true,\"user\":{\"f_ID\":1,\"f_Username\":\"admin\",\"f_Password\":\"1\",\"f_Name\":\"Admin\",\"f_Email\":\"admin1011@gmail.com\",\"f_DOB\":\"2000-10-10\",\"f_Permission\":\"admin\"},\"cart\":[]}');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -201,7 +236,7 @@ CREATE TABLE `users` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`f_ID`, `f_Username`, `f_Password`, `f_Name`, `f_Email`, `f_DOB`, `f_Permission`) VALUES
@@ -210,99 +245,99 @@ INSERT INTO `users` (`f_ID`, `f_Username`, `f_Password`, `f_Name`, `f_Email`, `f
 (23, 'buihuy', '1', 'Bùi Quang Huy', ',buiquanghuy1011@gmail.com', '2021-11-10T00:00', 'khachhang');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `brands`
+-- Indexes for table `brands`
 --
 ALTER TABLE `brands`
   ADD PRIMARY KEY (`BrandID`);
 
 --
--- Chỉ mục cho bảng `categories`
+-- Indexes for table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`CatID`);
 
 --
--- Chỉ mục cho bảng `details`
+-- Indexes for table `details`
 --
 ALTER TABLE `details`
   ADD PRIMARY KEY (`DetailID`);
 
 --
--- Chỉ mục cho bảng `orderdetails`
+-- Indexes for table `orderdetails`
 --
 ALTER TABLE `orderdetails`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Chỉ mục cho bảng `orders`
+-- Indexes for table `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`OrderID`);
 
 --
--- Chỉ mục cho bảng `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`ProID`);
 
 --
--- Chỉ mục cho bảng `sessions`
+-- Indexes for table `sessions`
 --
 ALTER TABLE `sessions`
   ADD PRIMARY KEY (`session_id`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`f_ID`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `brands`
+-- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `BrandID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `BrandID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT cho bảng `categories`
+-- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `CatID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `CatID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT cho bảng `details`
+-- AUTO_INCREMENT for table `details`
 --
 ALTER TABLE `details`
   MODIFY `DetailID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
--- AUTO_INCREMENT cho bảng `orderdetails`
+-- AUTO_INCREMENT for table `orderdetails`
 --
 ALTER TABLE `orderdetails`
-  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT cho bảng `orders`
+-- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `OrderID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `OrderID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
--- AUTO_INCREMENT cho bảng `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `ProID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `ProID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `f_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
